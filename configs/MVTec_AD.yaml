@@ -1,0 +1,42 @@
+backbone: Wide_ResNet101_2
+categories:
+- carpet
+- grid
+- leather
+- tile
+- wood
+- bottle
+- cable
+- capsule
+- hazelnut
+- metal_nut
+- pill
+- screw
+- toothbrush
+- transistor
+- zipper
+dataset: MVTec_AD
+mparams:
+  bottle: L1:5x3_a=0.3_l=1|L2:5x3_a=0.3_l=1|L3:7x3_a=0.3_l=0.8;img_AUC:clean|pix_AUC:blur_s=4.1_k=39|PRO:clean
+  cable: L1:13x7_a=0.7_l=1|L2:5x5_a=0.7_l=0.8|L3:7x1_a=0.3_l=0.8;img_AUC:blur_s=5.5_k=39|pix_AUC:blur_s=8.600000000000001_k=61|PRO:clean
+  capsule: L1:13x7_a=0.5_l=1|L2:9x5_a=0.5_l=0.5|L3:7x3_a=0.3_l=0.3;img_AUC:clean|pix_AUC:blur_s=7.800000000000001_k=61|PRO:blur_s=3.6_k=11
+  carpet: L1:7x3_a=0.7_l=1|L2:9x1_a=0.3_l=0.8|L3:3x1_a=0.3_l=0.5;img_AUC:blur_s=5.5_k=35|pix_AUC:clean|PRO:blur_s=3.0_k=11
+  grid: L1:13x3_a=0.7_l=1|L2:9x1_a=0.7_l=0.5|L3:7x1_a=0.3_l=0.3;img_AUC:clean|pix_AUC:clean|PRO:clean
+  hazelnut: L1:13x3_a=0.7_l=1|L2:9x5_a=0.7_l=0.5|L3:7x3_a=0.3_l=0.8;img_AUC:clean|pix_AUC:clean|PRO:clean
+  leather: L1:11x3_a=0.5_l=1|L2:9x3_a=0.3_l=1|L3:7x3_a=0.3_l=0.3;img_AUC:clean|pix_AUC:clean|PRO:clean
+  metal_nut: L1:13x5_a=0.5_l=1|L2:9x5_a=0.3_l=0.5|L3:7x3_a=0.3_l=0.8;img_AUC:clean|pix_AUC:blur_s=15.0_k=61|PRO:clean
+  pill: L1:11x5_a=0.5_l=1|L2:9x1_a=0.7_l=0.5|L3:7x1_a=0.3_l=0.5;img_AUC:mp_k=25|pix_AUC:blur_s=15.0_k=61|PRO:clean
+  screw: L1:5x3_a=0.5_l=1|L2:5x3_a=0.7_l=0.8|L3:7x3_a=0.3_l=0.3;img_AUC:clean|pix_AUC:blur_s=3.3_k=45|PRO:blur_s=3.1_k=17
+  tile: L1:13x7_a=0.3_l=1|L2:7x5_a=0.3_l=0.5|L3:5x3_a=0.3_l=0.5;img_AUC:clean|pix_AUC:clean|PRO:clean
+  toothbrush: L1:13x3_a=0.3_l=1|L2:9x5_a=0.3_l=0.8|L3:7x3_a=0.3_l=0.5;img_AUC:clean|pix_AUC:blur_s=3.0_k=11|PRO:clean
+  transistor: L1:13x5_a=0.3_l=1|L2:5x3_a=0.5_l=0.5|L3:5x1_a=0.3_l=0.8;img_AUC:blur_s=5.1_k=31|pix_AUC:blur_s=15.0_k=61|PRO:blur_s=6.6_k=39
+  wood: L1:7x3_a=0.7_l=1|L2:5x3_a=0.7_l=0.8|L3:7x1_a=0.7_l=0.3;img_AUC:clean|pix_AUC:clean|PRO:clean
+  zipper: L1:13x5_a=0.3_l=1|L2:7x5_a=0.7_l=1|L3:7x1_a=0.7_l=0.3;img_AUC:mp_k=11|pix_AUC:blur_s=10.4_k=61|PRO:blur_s=6.0_k=31
+root: /media/data4/chenzx/dataset/anomaly/mvtec_anomaly_detection
+temp_size: None
+temp_type: ALL
+test_batch_size: 32
+metric_functions : 
+- img_AUC
+- pix_AUC
+- PRO

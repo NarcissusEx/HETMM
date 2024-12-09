@@ -30,6 +30,7 @@ The source code of our paper "*[Hard-normal Example-aware Template Mutual Matchi
 **Create a python env using conda**
 ```bash
 conda create -n hetmm python=3.9 -y
+conda activate hetmm
 ```
 
 **Install the required libraries**
@@ -37,14 +38,33 @@ conda create -n hetmm python=3.9 -y
 bash setup.sh
 ```
 
-### 2) Detect and Localize Anomalies on MVTec AD
-Using the original template:
+### 2) Template Generation
+**Original template set on MVTec AD:**
 ```bash
-python run.py --ttype ALL --dataset MVTec_AD
+python run.py --mode temp --ttype ALL --dataset MVTec_AD
 ```
-Using the tiny set formed by PTS (60 sheets):
+**Tiny set formed by PTS (60 sheets) on MVTec AD:**
 ```bash
-python run.py --ttype PTS --tsize 60 --dataset MVTec_AD
+python run.py --mode temp --ttype PTS --tsize 60 --dataset MVTec_AD
+```
+Since generating pixel-level OPTICS clusters is time-consuming, you can download the "*template*" folder from [Google Driver](https://drive.google.com/drive/folders/1U3OR5z5EOC7S5bicS2aYi199GX2Lv5e3?usp=drive_link) / [Baidu Cloud](https://pan.baidu.com/s/1tu53Fg4gT8cyDBbzBTO0dA?pwd=kdty) and copy it into our main folder as:
+```
+HETMM/
+    ├── configs/
+    ├── template/
+    ├── src/
+    ├── run.py
+    └── ...
+```
+
+### 3) Anomaly Prediction
+**Original template set on MVTec AD:**
+```bash
+python run.py --mode test --ttype ALL --dataset MVTec_AD
+```
+**Tiny set formed by PTS (60 sheets) on MVTec AD:**
+```bash
+python run.py --mode test --ttype PTS --tsize 60 --dataset MVTec_AD
 ```
 
 ## Citation

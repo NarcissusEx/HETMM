@@ -1,0 +1,35 @@
+data : 
+    name     : $dataset
+    root     : $root
+    out_size : $out_size
+    normalize: 
+        mean : [0.485, 0.456, 0.406]
+        std  : [0.229, 0.256, 0.225]
+
+out_size : 
+    - 256
+    - 256
+
+metrics : 
+    num_workers   : $num_workers
+    functions : $metric_functions
+
+model : 
+    name     : $method
+    backbone : $backbone
+    out_size : $out_size
+    ishalf   : $half
+    mparams  : $mparams
+
+testloaderparams : 
+    batch_size : $test_batch_size
+    shuffle    : False
+    num_workers: 16
+
+temploaderparams : 
+    batch_size : 32
+    shuffle    : False
+    num_workers: 16
+
+tpath : template
+rpath : results
