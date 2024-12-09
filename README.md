@@ -47,7 +47,7 @@ python run.py --mode temp --ttype ALL --dataset MVTec_AD
 ```bash
 python run.py --mode temp --ttype PTS --tsize 60 --dataset MVTec_AD
 ```
-Since generating pixel-level OPTICS clusters is time-consuming, you can download the "*template*" folder from [Google Driver](https://drive.google.com/drive/folders/1U3OR5z5EOC7S5bicS2aYi199GX2Lv5e3?usp=drive_link) / [Baidu Cloud](https://pan.baidu.com/s/1tu53Fg4gT8cyDBbzBTO0dA?pwd=kdty) and copy it into our main folder as:
+Since generating pixel-level OPTICS clusters is time-consuming, you can download the "*template*" folder from [Google Driver](https://drive.google.com/drive/folders/1c4XvmugX-ryP168bDMFcScdiYWgYktlu?usp=drive_link) / [Baidu Cloud](https://pan.baidu.com/s/1HH_3FQo1K72HbUvZpfylxw?pwd=eeg9) and copy it into our main folder as:
 ```
 HETMM/
     ├── configs/
@@ -66,6 +66,7 @@ python run.py --mode test --ttype ALL --dataset MVTec_AD
 ```bash
 python run.py --mode test --ttype PTS --tsize 60 --dataset MVTec_AD
 ```
+Please see "*run.sh*" and "*run.py*" for more details.
 
 ## Citation
 
