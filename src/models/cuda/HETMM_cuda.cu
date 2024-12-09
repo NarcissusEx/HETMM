@@ -130,11 +130,13 @@ __global__ void easy_normal_prototype_init(
             if (uid == -1) break;
             for (auto j = 0; j < N; j ++) {
                 if (clus[j * WH + idx] == uid) {
+                    auto jCWH = j * CWH + idx;
                     scalar_t sum = 0;
                     for (auto k = 0; k < N; k ++) {
                         if (clus[k * WH + idx] == uid) {
+                            auto kCWH = k * CWH + idx;
                             for (auto l = 0; l < C; l ++) {
-                                sum += temp[j * CWH + l * WH + idx] * temp[k * CWH + l * WH + idx];
+                                sum += temp[jCWH + l * WH] * temp[kCWH + l * WH];
                             }
                         }
                     }
@@ -146,8 +148,9 @@ __global__ void easy_normal_prototype_init(
                 }
             }
             if (counts[idx] >= tsize || choose_idx == -1) break;
+            auto countIdx = counts[idx] * CWH + idx, chooseIdx = choose_idx * CWH + idx;
             for (auto l = 0; l < C; l ++) {
-                rets[counts[idx] * CWH + l * WH + idx] = temp[choose_idx * CWH + l * WH + idx];
+                rets[countIdx + l * WH] = temp[chooseIdx + l * WH];
             }
             flags[choose_idx * WH + idx] = false;
             counts[idx] ++;
@@ -169,10 +172,12 @@ __global__ void global_center_init(
             scalar_t max_value = -1e5;
             long choose_idx = -1;
             for (auto i = 0; i < N; i ++) {
+                auto iCWH = i * CWH + idx;
                 scalar_t sum = 0;
                 for (auto j = 0; j < N; j ++) {
+                    auto jCWH = j * CWH + idx;
                     for (auto k = 0; k < C; k ++) {
-                        sum += temp[i * CWH + k * WH + idx] * temp[j * CWH + k * WH + idx];
+                        sum += temp[iCWH + k * WH] * temp[jCWH + k * WH];
                     }
                 }
                 if (sum > max_value) {
@@ -180,8 +185,9 @@ __global__ void global_center_init(
                     choose_idx = i;
                 }
             }
+            auto countIdx = counts[idx] * CWH + idx, chooseIdx = choose_idx * CWH + idx;
             for (auto l = 0; l < C; l ++) {
-                rets[counts[idx] * CWH + l * WH + idx] = temp[choose_idx * CWH + l * WH + idx];
+                rets[countIdx + l * WH] = temp[chooseIdx + l * WH];
             }
             counts[idx] ++;
             flags[choose_idx * WH + idx] = false;
