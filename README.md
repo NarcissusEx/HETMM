@@ -1,10 +1,19 @@
 # HETMM
 
-The source code of our paper "*[Hard-normal Example-aware Template Mutual Matching for Industrial Anomaly Detection](https://arxiv.org/abs/2303.16191)*", [Zixuan Chen](https://narcissusex.github.io), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478), [Lingxiao Yang](https://zjjconan.github.io/), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498), *International Journal of Computer Vision (**IJCV**)*, 2024.
+The source code of our paper: "**Hard-normal Example-aware Template Mutual Matching for Industrial Anomaly Detection**", [Zixuan Chen](https://narcissusex.github.io), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478), [Lingxiao Yang](https://zjjconan.github.io/), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498), *International Journal of Computer Vision (**IJCV**)*, 2024.
 
 **TL;DR:** HETMM is a simple yet effective framework for industrial anomaly detection based on template matching, which can accurately detect and locate unknown anomalies in a training-free manner.
 
 ---
+[![ArXiv](https://img.shields.io/badge/cs.CV-2303.16191-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2303.16191)
+[![Google Drive](https://img.shields.io/badge/Material-1?logo=googledrive&label=Google%20Drive)](https://drive.google.com/drive/folders/1c4XvmugX-ryP168bDMFcScdiYWgYktlu?usp=drive_link)
+[![Baidu Cloud](https://img.shields.io/badge/Materials-ryP168bDMFcScdiYWgYktlu%3Fusp%3Ddrive_link?logo=Baidu&label=Baidu%20Cloud)](https://pan.baidu.com/s/1HH_3FQo1K72HbUvZpfylxw?pwd=eeg9)
+
+	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/hard-nominal-example-aware-template-mutual/anomaly-detection-on-mvtec-ad)](https://paperswithcode.com/sota/anomaly-detection-on-mvtec-ad?p=hard-nominal-example-aware-template-mutual)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/hard-nominal-example-aware-template-mutual/anomaly-detection-on-visa)](https://paperswithcode.com/sota/anomaly-detection-on-visa?p=hard-nominal-example-aware-template-mutual)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/hard-nominal-example-aware-template-mutual/anomaly-detection-on-surface-defect-saliency)](https://paperswithcode.com/sota/anomaly-detection-on-surface-defect-saliency?p=hard-nominal-example-aware-template-mutual)
+
 ## Motivation
 <div align=center>
 <img width="1148" alt="framework" src="assets/hetmm.png">
@@ -47,7 +56,7 @@ python run.py --mode temp --ttype ALL --dataset MVTec_AD
 ```bash
 python run.py --mode temp --ttype PTS --tsize 60 --dataset MVTec_AD
 ```
-Since generating pixel-level OPTICS clusters is time-consuming, you can download the "*template*" folder from [Google Driver](https://drive.google.com/drive/folders/1c4XvmugX-ryP168bDMFcScdiYWgYktlu?usp=drive_link) / [Baidu Cloud](https://pan.baidu.com/s/1HH_3FQo1K72HbUvZpfylxw?pwd=eeg9) and copy it into our main folder as:
+Since generating pixel-level OPTICS clusters is time-consuming, you can download the "*template*" folder from [Google Drive](https://drive.google.com/drive/folders/1c4XvmugX-ryP168bDMFcScdiYWgYktlu?usp=drive_link) / [Baidu Cloud](https://pan.baidu.com/s/1HH_3FQo1K72HbUvZpfylxw?pwd=eeg9) and copy it into our main folder as:
 ```
 HETMM/
     ├── configs/
