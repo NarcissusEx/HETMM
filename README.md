@@ -1,6 +1,6 @@
 # Hard-normal Example-aware Template Mutual Matching for Industrial Anomaly Detection
 
-[Zixuan Chen](https://narcissusex.github.io), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478), [Lingxiao Yang](https://zjjconan.github.io/), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498)
+[Zixuan Chen](https://narcissusex.github.io), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478), [Lingxiao Yang](https://zjjconan.github.io/), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498),
 
 *International Journal of Computer Vision (**IJCV**)*, 2024.
 
