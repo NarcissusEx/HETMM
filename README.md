@@ -1,6 +1,8 @@
-# HETMM
+# Hard-normal Example-aware Template Mutual Matching for Industrial Anomaly Detection
 
-The source code of our paper: "**Hard-normal Example-aware Template Mutual Matching for Industrial Anomaly Detection**", [Zixuan Chen](https://narcissusex.github.io), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478), [Lingxiao Yang](https://zjjconan.github.io/), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498), *International Journal of Computer Vision (**IJCV**)*, 2024.
+[Zixuan Chen](https://narcissusex.github.io), [Xiaohua Xie](https://cse.sysu.edu.cn/content/2478), [Lingxiao Yang](https://zjjconan.github.io/), [Jian-Huang Lai](https://cse.sysu.edu.cn/content/2498)
+
+*International Journal of Computer Vision (**IJCV**)*, 2024.
 
 **TL;DR:** HETMM is a simple yet effective framework for industrial anomaly detection based on template matching, which can accurately detect and locate unknown anomalies in a training-free manner.
 
