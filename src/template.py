@@ -13,7 +13,7 @@ from HETMM_cuda import PTS
 
 def gen_by_ALL(model, temploader, tpath, backbone, half=False, save=True):
     Out_dict = {}
-    print (f'Generating the original template')
+    # print (f'Generating the original template')
     with torch.no_grad():
         for batch in tqdm(temploader):
             x = batch[0].cuda().half() if half else batch[0].cuda()
@@ -29,7 +29,7 @@ def gen_by_ALL(model, temploader, tpath, backbone, half=False, save=True):
 def gen_by_PC_OPTICS(tdict, tsize, tpath, backbone, num_workers, save=True, **kwargs):
     clu_path = os.path.join(tpath, f'{backbone}_PC_OPTICSx{tsize}.pkl')
     if os.path.exists(clu_path):
-        print ('Found pretrained OPTICS clusters!')
+        # print ('Found pretrained OPTICS clusters!')
         clu_dict = torch.load(clu_path, weights_only=True, map_location='cpu')
 
     else:
@@ -45,7 +45,7 @@ def gen_by_PTS(tdict, tsize, tpath, backbone, num_workers, save=True, **kwargs):
     clu_dict = gen_by_PC_OPTICS(tdict, tsize, tpath, backbone, num_workers, save=True, **kwargs)
 
     Out_dict = {}
-    print ('Generating PTS...')
+    # print ('Generating PTS...')
     for key, Ts in tqdm(tdict.items()):
         Out_dict[key] = PTS(Ts, clu_dict[key].to(Ts.device).long(), int(tsize))
 
@@ -62,7 +62,7 @@ def get_pixel_level_optics_clusters(tdict, clu_size, num_workers):
 
     clu_dict = {}
 
-    print ('Generating OPTICS clusters (very slow)...')
+    # print ('Generating OPTICS clusters (very slow)...')
     for key, Ts in tqdm(tdict.items()):
         N, C, H, W = Ts.shape
         pixels = F.unfold(Ts, 1).cpu().numpy()

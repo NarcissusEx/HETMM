@@ -58,9 +58,9 @@ class MVTec_AD(Base):
         super(MVTec_AD, self).__init__(params)
 
     def load_data(self):
-        self.img_path = os.path.join(self.root, self.category, self.mode if self.mode == 'test' else 'train')
+        self.img_path = os.path.join(self.datapath, self.category, self.mode if self.mode == 'test' else 'train')
         if self.mode == 'test':
-            self.gt_path = os.path.join(self.root, self.category, 'ground_truth')
+            self.gt_path = os.path.join(self.datapath, self.category, 'ground_truth')
         self.img_paths, self.gt_paths, self.labels, self.types = [], [], [], []
         for defect_type in filter(lambda x : os.path.isdir(os.path.join(self.img_path, x)), os.listdir(self.img_path)):
             img_paths = [os.path.join(self.img_path, defect_type, x) for x in sorted(filter(lambda x : x.endswith('.png'), \

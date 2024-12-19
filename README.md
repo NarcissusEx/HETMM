@@ -52,11 +52,11 @@ bash setup.sh
 ### 2) Template Generation
 **Original template set on MVTec AD:**
 ```bash
-python run.py --mode temp --ttype ALL --dataset MVTec_AD
+python run.py --mode temp --ttype ALL --dataset MVTec_AD --datapath <data_path>
 ```
 **Tiny set formed by PTS (60 sheets) on MVTec AD:**
 ```bash
-python run.py --mode temp --ttype PTS --tsize 60 --dataset MVTec_AD
+python run.py --mode temp --ttype PTS --tsize 60 --dataset MVTec_AD --datapath <data_path>
 ```
 Since generating pixel-level OPTICS clusters is time-consuming, you can download the "*template*" folder from [Google Drive](https://drive.google.com/drive/folders/1c4XvmugX-ryP168bDMFcScdiYWgYktlu?usp=drive_link) / [Baidu Cloud](https://pan.baidu.com/s/1HH_3FQo1K72HbUvZpfylxw?pwd=eeg9) and copy it into our main folder as:
 ```
@@ -71,11 +71,11 @@ HETMM/
 ### 3) Anomaly Prediction
 **Original template set on MVTec AD:**
 ```bash
-python run.py --mode test --ttype ALL --dataset MVTec_AD
+python run.py --mode test --ttype ALL --dataset MVTec_AD --datapath <data_path>
 ```
 **Tiny set formed by PTS (60 sheets) on MVTec AD:**
 ```bash
-python run.py --mode test --ttype PTS --tsize 60 --dataset MVTec_AD
+python run.py --mode test --ttype PTS --tsize 60 --dataset MVTec_AD --datapath <data_path>
 ```
 Please see "*run.sh*" and "*run.py*" for more details.
 

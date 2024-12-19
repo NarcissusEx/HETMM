@@ -38,10 +38,9 @@ class Cfg:
             os.makedirs(os.path.join(getattr(self, key), self.dataset, self.category), exist_ok=True)
 
         for func in ['data', 'template']:
-            try:
-                getattr(self, f'load_{func}')()
-            except:
-                pass
+            getattr(self, f'load_{func}')()
+            # except:
+            #     pass
 
         self.model.update(category)
 

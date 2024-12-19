@@ -1,6 +1,6 @@
 data : 
     name     : $dataset
-    root     : $root
+    datapath : $datapath
     out_size : $out_size
     normalize: 
         mean : [0.485, 0.456, 0.406]

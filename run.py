@@ -16,6 +16,7 @@ def argParse():
     parser.add_argument('--method', default='ATMM')
     parser.add_argument('--ttype', choices=['ALL', 'PTS'], default='ALL')
     parser.add_argument('--tsize', type=int, default=0)
+    parser.add_argument('--datapath', help='your own data path')
     parser.add_argument('--dataset', type=str, default='MVTec_AD')
     parser.add_argument('--categories', type=str, nargs='+', default=None)
     parser.add_argument('--half', action='store_true')
@@ -55,7 +56,6 @@ def temp(cfg):
     def get_ALL(cfg, tpath):
         try:
             tdict = cfg.model.load_template(os.path.join(tpath, f'{cfg.model.backbone.lower()}_ALL.pkl'))
-            print ('Found the original template!')
 
         except:
             tdict = tl.gen_by_ALL(cfg.model, cfg.temploader, tpath, cfg.model.backbone.lower(), cfg.half, save=True)
@@ -68,7 +68,6 @@ def temp(cfg):
     else:
         try:
             tdict = cfg.model.load_template(os.path.join(tpath, tname))
-            print (f'Found the {cfg.ttype}x{cfg.tsize}!')
 
         except:
             tdict = getattr(tl, f'gen_by_{cfg.ttype}')(get_ALL(cfg, tpath), cfg.tsize, tpath, cfg.model.backbone.lower(), num_workers=cfg.num_workers, save=True)
@@ -78,12 +77,9 @@ def temp(cfg):
 if __name__ == '__main__':
     args = argParse()
     cfg = Cfg(args)
-    categories = tqdm(cfg.categories) if args.mode == 'test' else cfg.categories
+    categories = tqdm(cfg.categories)
     for category in categories:
-        if args.mode == 'test':
-            categories.set_description(category)
-        else:
-            print (category)
+        categories.set_description(category)
         cfg.update(category)
         globals()[args.mode](cfg)
 
