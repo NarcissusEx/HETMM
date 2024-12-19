@@ -86,6 +86,8 @@ Please see "*run.sh*" and "*run.py*" for more details.
     author    = {Chen, Zixuan and Xie, Xiaohua and Yang, Lingxiao and Lai, Jianhuang},
     title     = {Hard-normal Example-aware Template Mutual Matching for Industrial Anomaly Detection},
     journal   = {International Journal of Computer Vision (IJCV)},
-    publisher = {Springer}
+    publisher = {Springer},
+    year      = {2024},
+    doi       = {10.1007/s11263-024-02323-0},
 }
 ```
