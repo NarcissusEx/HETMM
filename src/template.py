@@ -15,7 +15,7 @@ def gen_by_ALL(model, temploader, tpath, backbone, half=False, save=True):
     Out_dict = {}
     # print (f'Generating the original template')
     with torch.no_grad():
-        for batch in tqdm(temploader):
+        for batch in temploader:
             x = batch[0].cuda().half() if half else batch[0].cuda()
             for k, v in model.make_template(x).items():
                 Out_dict[k] = [v.cuda()] if k not in Out_dict else Out_dict[k] + [v.cuda()]
